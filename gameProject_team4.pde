@@ -98,7 +98,31 @@ void draw(){
       stop();
     }
   }
+  if(time>=6 ){
+    t=300; s=200;
+    for(int i=6;i<14; i++){
+      villain(x[i],y[i]);
+      x[i] += vx[i];
+      y[i] += vy[i];
+      if(x[i]>width) x[i] = 0;
+      if(x[i]<0) x[i] = 600;
+      if(y[i]>height) y[i] = 0;
+      if(y[i]<0) y[i] = 300;
+    }
+    for (int i =6; i<14; i++){
+      dx[i] = x[i]-t;
+      dy[i] = y[i]-s;
+      d[i] = sqrt(dx[i]*dx[i]+dy[i]*dy[i]);
+      if (d[i] <30){
+        fill(102,0,23);
+        textSize(70);
+        text("You DIED...", 175, 150);
+        delay(2000);
+      }
+    }
+  }
 }
+
 void villain(float a, float b){
   circle(a,b,40);
   fill(0,0,0);

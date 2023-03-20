@@ -60,7 +60,7 @@ void draw(){  //초에 60번씩 그림을 그리는 함수
     }
 }
 
-void moveVillain(int i){
+void moveVillain(int i){  //빌런움직임
   x[i] += vx[i];
   y[i] += vy[i];
   villain(x[i],y[i]);
@@ -70,7 +70,7 @@ void moveVillain(int i){
   if(y[i]<0) y[i] = height;
 }
 
-void collide(int i){
+void collide(int i){  //충돌 및 사망
   dx[i] = x[i]-t;
   dy[i] = y[i]-s;
   d[i] = sqrt(dx[i]*dx[i]+dy[i]*dy[i]);
@@ -82,7 +82,7 @@ void collide(int i){
     stop();
   }
 }
-void itsme(){
+void itsme(){ /공주인공
   fill(0);
   circle(t,s,r);
   fill(119,78,78);
@@ -95,7 +95,7 @@ void itsme(){
   circle(t+2.5,s-r/10,r/20);
 }
 
-void moveMe(){
+void moveMe(){  //
   if (keyPressed) {  //캐릭터 움직임(방향키)
     if (t<=width && t>=0) {
       if (keyCode == LEFT) {
